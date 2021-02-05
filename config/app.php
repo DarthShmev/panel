@@ -13,6 +13,16 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Location
+    |--------------------------------------------------------------------------
+    | This value is set when creating a geo located instance. A visual
+    | indicator for users to know where they're connecting to.
+    */
+
+    'location' => env('APP_LOCATION', 'develop'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Name
     |--------------------------------------------------------------------------
     |

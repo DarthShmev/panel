@@ -8,6 +8,11 @@ export interface SiteSettings {
         siteKey: string;
     };
     analytics: string;
+    version: {
+        isGit: boolean;
+        version: string;
+    };
+    location: string;
 }
 
 export interface SettingsStore {
