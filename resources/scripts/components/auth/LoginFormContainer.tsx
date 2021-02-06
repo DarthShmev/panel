@@ -4,6 +4,10 @@ import styled from 'styled-components/macro';
 import { breakpoint } from '@/theme';
 import FlashMessageRender from '@/components/FlashMessageRender';
 import tw from 'twin.macro';
+import { useStoreState } from 'easy-peasy';
+import { ApplicationStore } from '@/state';
+import { faCodeBranch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type Props = React.DetailedHTMLProps<React.FormHTMLAttributes<HTMLFormElement>, HTMLFormElement> & {
     title?: string;
@@ -28,6 +32,29 @@ const Container = styled.div`
     `};
 `;
 
+const VersionsBlock = () => {
+    const version = useStoreState((state: ApplicationStore) => state.settings.data!.version);
+    const location = useStoreState((state: ApplicationStore) => state.settings.data!.location);
+    return (
+        <div css={tw`mt-4 space-y-2`}>
+            <p css={tw`text-center text-neutral-500 text-xs`}>
+                <FontAwesomeIcon icon={faCodeBranch}/> {location} - {version.version}
+            </p>
+            <p css={tw`text-center text-neutral-500 text-xs`}>
+                &copy; 2015 - 2020&nbsp;
+                <a
+                    rel={'noopener nofollow noreferrer'}
+                    href={'https://pterodactyl.io'}
+                    target={'_blank'}
+                    css={tw`no-underline text-neutral-500 hover:text-neutral-300`}
+                >
+                    Pterodactyl Software
+                </a>
+            </p>
+        </div>
+    );
+};
+
 export default forwardRef<HTMLFormElement, Props>(({ title, ...props }, ref) => (
     <Container>
         {title &&
@@ -46,16 +73,6 @@ export default forwardRef<HTMLFormElement, Props>(({ title, ...props }, ref) => 
                 </div>
             </div>
         </Form>
-        <p css={tw`text-center text-neutral-500 text-xs mt-4`}>
-            &copy; 2015 - 2020&nbsp;
-            <a
-                rel={'noopener nofollow noreferrer'}
-                href={'https://pterodactyl.io'}
-                target={'_blank'}
-                css={tw`no-underline text-neutral-500 hover:text-neutral-300`}
-            >
-                Pterodactyl Software
-            </a>
-        </p>
+        <VersionsBlock />
     </Container>
 ));

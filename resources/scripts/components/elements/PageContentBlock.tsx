@@ -19,10 +19,10 @@ const VersionsBlock = () => {
     const location = useStoreState((state: ApplicationStore) => state.settings.data!.location);
     return (
         <ContentContainer css={tw`mb-4 space-y-2`}>
-            <p css={tw`text-center text-neutral-500 text-sm`}>
+            <p css={tw`text-center text-neutral-500 text-xs`}>
                 <FontAwesomeIcon icon={faCodeBranch}/> {location} - {version.version}
             </p>
-            <p css={tw`text-center text-neutral-500 text-sm`}>
+            <p css={tw`text-center text-neutral-500 text-xs`}>
                 &copy; 2015 - 2020&nbsp;
                 <a
                     rel={'noopener nofollow noreferrer'}
