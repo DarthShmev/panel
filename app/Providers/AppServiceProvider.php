@@ -30,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
 
         View::share('appVersion', $this->versionData()['version'] ?? 'undefined');
         View::share('appIsGit', $this->versionData()['is_git'] ?? false);
+        View::share('appLocation', config('app.location') ?? 'develop');
 
         Paginator::useBootstrap();
     }
