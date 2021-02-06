@@ -9,10 +9,12 @@ use Illuminate\Contracts\Validation\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Pterodactyl\Exceptions\Model\DataValidationException;
 use Illuminate\Database\Eloquent\Model as IlluminateModel;
+use Tenancy\Affects\Connections\Support\Traits\OnTenant;
 
 abstract class Model extends IlluminateModel
 {
     use HasFactory;
+    use OnTenant;
 
     /**
      * Set to true to return immutable Carbon date instances from the model.
