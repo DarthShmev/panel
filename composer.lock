@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "21bdd98a8ec7f915093c3cbbcce575e5",
+    "content-hash": "5b86967fdd4b13d8f5ad3bb3177f22cc",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -6557,6 +6557,69 @@
             "time": "2020-09-15T14:02:07+00:00"
         },
         {
+            "name": "tenancy/hooks-migration",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tenancy/hooks-migration.git",
+                "reference": "78e48242d9fc5e7581ac477bd624263bef24a269"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tenancy/hooks-migration/zipball/78e48242d9fc5e7581ac477bd624263bef24a269",
+                "reference": "78e48242d9fc5e7581ac477bd624263bef24a269",
+                "shasum": ""
+            },
+            "require": {
+                "tenancy/affects-connections": "*",
+                "tenancy/framework": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tenancy\\Hooks\\Migration\\Provider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tenancy\\Hooks\\Migration\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arlon Antonius",
+                    "email": "opensource@arlon.dev",
+                    "homepage": "https://arlon.dev"
+                }
+            ],
+            "description": "The tenancy/tenancy migration mutations",
+            "keywords": [
+                "hooks",
+                "migration",
+                "tenancy"
+            ],
+            "support": {
+                "source": "https://github.com/tenancy/hooks-migration/tree/v1.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/tenancy",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/tenancy",
+                    "type": "opencollective"
+                }
+            ],
+            "time": "2020-10-05T02:44:53+00:00"
+        },
+        {
             "name": "tenancy/identification-driver-http",
             "version": "v1.3.0",
             "source": {
@@ -11119,5 +11182,5 @@
         "ext-zip": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
