@@ -184,6 +184,7 @@ return [
          * Application Service Providers...
          */
         Pterodactyl\Providers\AppServiceProvider::class,
+        Pterodactyl\Providers\TenantServiceProvider::class,
         Pterodactyl\Providers\AuthServiceProvider::class,
         Pterodactyl\Providers\BackupsServiceProvider::class,
         Pterodactyl\Providers\BladeServiceProvider::class,
