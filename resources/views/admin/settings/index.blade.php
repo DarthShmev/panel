@@ -32,10 +32,14 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
-                                <label class="control-label">Google Analytics</label>
+                                <label class="control-label">Default Language</label>
                                 <div>
-                                    <input type="text" class="form-control" name="app:analytics" value="{{ old('app:analytics', config('app.analytics')) }}" />
-                                    <p class="text-muted"><small>This is your Google Analytics Tracking ID, Ex. UA-123723645-2</small></p>
+                                    <select name="app:locale" class="form-control">
+                                        @foreach($languages as $key => $value)
+                                            <option value="{{ $key }}" @if(config('app.locale') === $key) selected @endif>{{ $value }}</option>
+                                        @endforeach
+                                    </select>
+                                    <p class="text-muted"><small>The default language to use when rendering UI components.</small></p>
                                 </div>
                             </div>
                             <div class="form-group col-md-4">
@@ -56,17 +60,6 @@
                                         </label>
                                     </div>
                                     <p class="text-muted"><small>If enabled, any account falling into the selected grouping will be required to have 2-Factor authentication enabled to use the Panel.</small></p>
-                                </div>
-                            </div>
-                            <div class="form-group col-md-4">
-                                <label class="control-label">Default Language</label>
-                                <div>
-                                    <select name="app:locale" class="form-control">
-                                        @foreach($languages as $key => $value)
-                                            <option value="{{ $key }}" @if(config('app.locale') === $key) selected @endif>{{ $value }}</option>
-                                        @endforeach
-                                    </select>
-                                    <p class="text-muted"><small>The default language to use when rendering UI components.</small></p>
                                 </div>
                             </div>
                         </div>

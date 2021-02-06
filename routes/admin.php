@@ -65,13 +65,8 @@ Route::group(['prefix' => 'databases'], function () {
 */
 Route::group(['prefix' => 'settings'], function () {
     Route::get('/', 'Settings\IndexController@index')->name('admin.settings');
-    Route::get('/mail', 'Settings\MailController@index')->name('admin.settings.mail');
-    Route::get('/mail/test', 'Settings\MailController@test')->name('admin.settings.mail.test');
-    Route::get('/advanced', 'Settings\AdvancedController@index')->name('admin.settings.advanced');
 
     Route::patch('/', 'Settings\IndexController@update');
-    Route::patch('/mail', 'Settings\MailController@update');
-    Route::patch('/advanced', 'Settings\AdvancedController@update');
 });
 
 /*
