@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5aca2cebefb2b9264766a29c0a19d784",
+    "content-hash": "21bdd98a8ec7f915093c3cbbcce575e5",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -6311,6 +6311,128 @@
             "time": "2020-12-08T16:59:59+00:00"
         },
         {
+            "name": "tenancy/affects-connections",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tenancy/affects-connections.git",
+                "reference": "18d042cbcc95afb5abc61b28350421bec2b1e545"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tenancy/affects-connections/zipball/18d042cbcc95afb5abc61b28350421bec2b1e545",
+                "reference": "18d042cbcc95afb5abc61b28350421bec2b1e545",
+                "shasum": ""
+            },
+            "require": {
+                "tenancy/framework": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tenancy\\Affects\\Connections\\Provider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tenancy\\Affects\\Connections\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arlon Antonius",
+                    "email": "opensource@arlon.dev",
+                    "homepage": "https://arlon.dev"
+                }
+            ],
+            "description": "The tenancy/tenancy connections mutations",
+            "keywords": [
+                "affects",
+                "connections",
+                "tenancy"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/tenancy",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/tenancy",
+                    "type": "opencollective"
+                }
+            ],
+            "time": "2020-05-15T23:04:27+00:00"
+        },
+        {
+            "name": "tenancy/db-driver-mysql",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tenancy/db-driver-mysql.git",
+                "reference": "fbb6b1defd0c4b99d3085673b513f36f35520d68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tenancy/db-driver-mysql/zipball/fbb6b1defd0c4b99d3085673b513f36f35520d68",
+                "reference": "fbb6b1defd0c4b99d3085673b513f36f35520d68",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.9",
+                "tenancy/affects-connections": "*",
+                "tenancy/framework": "*",
+                "tenancy/hooks-database": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tenancy\\Database\\Drivers\\Mysql\\Provider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tenancy\\Database\\Drivers\\Mysql\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arlon Antonius",
+                    "email": "opensource@arlon.dev",
+                    "homepage": "https://arlon.dev"
+                }
+            ],
+            "description": "The tenancy/tenancy database driver for mysql",
+            "keywords": [
+                "database",
+                "mariadb",
+                "mysql",
+                "tenancy"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/tenancy",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/tenancy",
+                    "type": "opencollective"
+                }
+            ],
+            "time": "2020-12-24T07:58:32+00:00"
+        },
+        {
             "name": "tenancy/framework",
             "version": "v1.3.0",
             "source": {
@@ -6374,6 +6496,65 @@
                 }
             ],
             "time": "2020-10-01T18:28:23+00:00"
+        },
+        {
+            "name": "tenancy/hooks-database",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tenancy/hooks-database.git",
+                "reference": "93cdca88ce9b6261204c44b6b709947dbdcbcb7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tenancy/hooks-database/zipball/93cdca88ce9b6261204c44b6b709947dbdcbcb7e",
+                "reference": "93cdca88ce9b6261204c44b6b709947dbdcbcb7e",
+                "shasum": ""
+            },
+            "require": {
+                "tenancy/framework": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tenancy\\Hooks\\Database\\Provider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tenancy\\Hooks\\Database\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arlon Antonius",
+                    "email": "opensource@arlon.dev",
+                    "homepage": "https://arlon.dev"
+                }
+            ],
+            "description": "The tenancy/tenancy database mutations",
+            "keywords": [
+                "database",
+                "hooks",
+                "tenancy"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/tenancy",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/tenancy",
+                    "type": "opencollective"
+                }
+            ],
+            "time": "2020-09-15T14:02:07+00:00"
         },
         {
             "name": "tenancy/identification-driver-http",

@@ -12,6 +12,21 @@ class Tenant extends Model implements BaseTenant, IdentifiesByHttp
 {
     use AllowsTenantIdentification;
 
+    protected $dispatchesEvents = [
+        'created' => \Tenancy\Tenant\Events\Created::class,
+        'updated' => \Tenancy\Tenant\Events\Updated::class,
+        'deleted' => \Tenancy\Tenant\Events\Deleted::class,
+    ];
+
+    /**
+     * Fields that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'domain'
+    ];
+
     /**
      * Specify whether the tenant model is matching the request.
      *
