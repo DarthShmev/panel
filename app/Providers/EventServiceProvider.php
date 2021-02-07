@@ -7,6 +7,7 @@ use Pterodactyl\Listeners\ConfigureTenantConnection;
 use Pterodactyl\Listeners\ConfigureTenantDatabase;
 use Pterodactyl\Listeners\ConfigureTenantMigrations;
 use Pterodactyl\Listeners\ConfigureTenantSeeds;
+use Pterodactyl\Listeners\RegisterTenantSettings;
 use Pterodactyl\Listeners\ResolveTenantConnection;
 use Pterodactyl\Notifications\ServerInstalled as ServerInstalledNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -15,6 +16,7 @@ use Tenancy\Affects\Connections\Events\Resolving;
 use Tenancy\Hooks\Database\Events\Drivers\Configuring as ConfiguringTenantDatabase;
 use Tenancy\Hooks\Migration\Events\ConfigureMigrations;
 use Tenancy\Hooks\Migration\Events\ConfigureSeeds;
+use Tenancy\Identification\Events\Switched;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -41,6 +43,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         ConfigureSeeds::class => [
             ConfigureTenantSeeds::class,
+        ],
+        Switched::class => [
+            RegisterTenantSettings::class,
         ],
     ];
 }
