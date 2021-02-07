@@ -1,3 +1,5 @@
+@include('partials/ogp')
+
 <html>
     <head>
         <title>{{ config('app.name', 'Pterodactyl') }}</title>
@@ -15,7 +17,7 @@
             <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#bc6e3c">
             <link rel="shortcut icon" href="/favicons/favicon.ico">
             <meta name="msapplication-config" content="/favicons/browserconfig.xml">
-            <meta name="theme-color" content="#0e4688">
+            @yield('ogp:tags')
         @show
 
         @section('user-data')
