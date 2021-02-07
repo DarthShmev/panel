@@ -3,6 +3,7 @@
 namespace Pterodactyl\Listeners;
 
 use Pterodactyl\Providers\SettingsServiceProvider;
+use Tenancy\Facades\Tenancy;
 
 class RegisterTenantSettings
 {
@@ -14,6 +15,8 @@ class RegisterTenantSettings
      */
     public function handle()
     {
-        app()->register(SettingsServiceProvider::class);
+        if (Tenancy::getTenant()) {
+            app()->register(SettingsServiceProvider::class);
+        }
     }
 }
