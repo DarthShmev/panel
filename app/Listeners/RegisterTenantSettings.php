@@ -3,7 +3,7 @@
 namespace Pterodactyl\Listeners;
 
 use Pterodactyl\Providers\SettingsServiceProvider;
-use Tenancy\Facades\Tenancy;
+use Tenancy\Identification\Events\Switched;
 
 class RegisterTenantSettings
 {
@@ -11,11 +11,12 @@ class RegisterTenantSettings
      * Register the settings for each tenant's panel only
      * once the tenant has been identified.
      *
+     * @param Switched $event
      * @return void
      */
-    public function handle()
+    public function handle(Switched $event)
     {
-        if (Tenancy::getTenant()) {
+        if (!is_null($event->tenant)) {
             app()->register(SettingsServiceProvider::class);
         }
     }
