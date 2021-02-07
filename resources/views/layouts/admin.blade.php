@@ -3,6 +3,9 @@
 
 {{-- This software is licensed under the terms of the MIT license. --}}
 {{-- https://opensource.org/licenses/MIT --}}
+
+@include('partials/ogp')
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,7 +22,7 @@
         <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#bc6e3c">
         <link rel="shortcut icon" href="/favicons/favicon.ico">
         <meta name="msapplication-config" content="/favicons/browserconfig.xml">
-        <meta name="theme-color" content="#0e4688">
+        @yield('ogp:tags')
 
         @include('layouts.scripts')
 

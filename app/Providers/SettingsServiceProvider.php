@@ -33,6 +33,10 @@ class SettingsServiceProvider extends ServiceProvider
         'pterodactyl:client_features:allocations:enabled',
         'pterodactyl:client_features:allocations:range_start',
         'pterodactyl:client_features:allocations:range_end',
+        'ogp:site_name',
+        'ogp:description',
+        'ogp:image',
+        'ogp:theme_colour',
     ];
 
     /**
