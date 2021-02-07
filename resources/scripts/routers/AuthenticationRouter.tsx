@@ -14,6 +14,9 @@ export default ({ location, history, match }: RouteComponentProps) => (
             <Route path={`${match.path}/password`} component={ForgotPasswordContainer} exact/>
             <Route path={`${match.path}/password/reset/:token`} component={ResetPasswordContainer}/>
             <Route path={`${match.path}/checkpoint`}/>
+            <Route path={`${match.path}/invalid`}>
+                <NotFound title={'Invalid Domain'} message={'Invalid domain provided for this Pterodactyl installation.'} />
+            </Route>
             <Route path={'*'}>
                 <NotFound onBack={() => history.push('/auth/login')}/>
             </Route>

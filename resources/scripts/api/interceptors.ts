@@ -11,6 +11,11 @@ export const setupInterceptors = (history: History) => {
                 }
             }
         }
+        if (error.response?.status === 400) {
+            if (error.response?.data.errors?.[0].code === 'InvalidDomainProvidedException') {
+                history.replace('/auth/invalid');
+            }
+        }
         throw error;
     });
 };
