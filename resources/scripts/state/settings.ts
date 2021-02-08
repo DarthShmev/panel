@@ -3,6 +3,9 @@ import { action, Action } from 'easy-peasy';
 export interface SiteSettings {
     name: string;
     locale: string;
+    branding: {
+        authLogo: string;
+    };
     recaptcha: {
         enabled: boolean;
         siteKey: string;

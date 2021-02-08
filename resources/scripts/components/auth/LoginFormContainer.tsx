@@ -33,9 +33,11 @@ const Container = styled.div`
 `;
 
 const Logo = () => {
+    const path = useStoreState((state: ApplicationStore) => state.settings.data!.branding.authLogo);
+
     return (
         <div css={tw`flex-none select-none mt-6 md:mt-0 self-center`}>
-            <img src={'/assets/svgs/pterodactyl.svg'} css={tw`block w-48 md:w-64 mx-auto`} />
+            <img src={path} css={tw`block w-48 max-h-24 mx-auto`} />
         </div>
     );
 };
