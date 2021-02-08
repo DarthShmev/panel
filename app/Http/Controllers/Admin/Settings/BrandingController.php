@@ -49,12 +49,12 @@ class BrandingController extends Controller
     }
 
     /**
-     * Handle settings update.
+     * Handle uploading and storing branding logos.
      *
      * @throws \Pterodactyl\Exceptions\Model\DataValidationException
      * @throws \Pterodactyl\Exceptions\Repository\RecordNotFoundException
      */
-    public function update(BrandingSettingsFormRequest $request): RedirectResponse
+    public function store(BrandingSettingsFormRequest $request): RedirectResponse
     {
         if ($request->hasFile('auth_logo')) {
             $image = $request->file('auth_logo');

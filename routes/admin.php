@@ -69,7 +69,7 @@ Route::group(['prefix' => 'settings'], function () {
     Route::get('/embed', 'Settings\EmbedController@index')->name('admin.settings.embed');
 
     Route::patch('/', 'Settings\IndexController@update');
-    Route::patch('/branding', 'Settings\BrandingController@update');
+    Route::patch('/branding', 'Settings\BrandingController@store');
     Route::patch('/embed', 'Settings\EmbedController@update');
 });
 

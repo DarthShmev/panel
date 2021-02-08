@@ -48,6 +48,7 @@
                     <div class="box-footer">
                         {!! csrf_field() !!}
                         <button type="submit" name="_method" value="PATCH" class="btn btn-sm btn-primary pull-right">Publish</button>
+                        <button type="submit" name="_method" value="DELETE" class="btn btn-sm btn-danger pull-right">Delete</button>
                     </div>
                 </form>
             </div>
