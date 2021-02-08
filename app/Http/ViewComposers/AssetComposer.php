@@ -32,6 +32,9 @@ class AssetComposer
             'version' => $this->versionData(),
             'location' => config('app.location') ?? 'develop',
             'locale' => config('app.locale') ?? 'en',
+            'branding' => [
+                'authLogo' => config('branding.auth_logo') ?? '/assets/svgs/pterodactyl.svg',
+            ],
             'recaptcha' => [
                 'enabled' => config('recaptcha.enabled', false),
                 'siteKey' => config('recaptcha.website_key') ?? '',
