@@ -16,6 +16,7 @@
         "ext-mbstring": "*",
         "ext-pdo_mysql": "*",
         "ext-zip": "*",
+        "andcarpi/laravel-popper": "^0.9.4",
         "aws/aws-sdk-php": "^3.171",
         "doctrine/dbal": "^2.12",
         "fideloper/proxy": "^4.4",

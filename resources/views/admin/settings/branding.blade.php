@@ -33,6 +33,7 @@
                                         src="{{ old('branding:auth_logo', config('branding.auth_logo')) }}"
                                         class="img-thumbnail center-block bg-black-gradient"
                                         style="height: 150px"
+                                        {{ Popper::size('large')->pop('Click me to change the auth screens logo!') }}
                                         id="auth_logo_preview"
                                     />
                                     <p class="text-muted">
