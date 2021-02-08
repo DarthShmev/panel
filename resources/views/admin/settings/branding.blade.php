@@ -54,3 +54,30 @@
         </div>
     </div>
 @endsection
+
+@section('footer-scripts')
+    @parent
+    <script>
+        // Read the uploaded image and then show a preview to the user.
+        function readImage(input, output) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $(output).attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#auth_logo").change(function(){
+            readImage(this, '#auth_logo_preview');
+        });
+
+        // Show the upload image menu when the previews are clicked.
+        $('#auth_logo_preview').click(function () {
+            $('#auth_logo').click();
+        });
+    </script>
+@endsection
