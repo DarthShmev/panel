@@ -65,6 +65,7 @@ Route::group(['prefix' => 'databases'], function () {
 */
 Route::group(['prefix' => 'settings'], function () {
     Route::get('/', 'Settings\IndexController@index')->name('admin.settings');
+    Route::get('/branding', 'Settings\BrandingController@index')->name('admin.settings.branding');
     Route::get('/embed', 'Settings\EmbedController@index')->name('admin.settings.embed');
 
     Route::patch('/', 'Settings\IndexController@update');

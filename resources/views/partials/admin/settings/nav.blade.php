@@ -7,6 +7,7 @@
             <div class="nav-tabs-custom nav-tabs-floating">
                 <ul class="nav nav-tabs">
                     <li @if($activeTab === 'basic')class="active"@endif><a href="{{ route('admin.settings') }}">General</a></li>
+                    <li @if($activeTab === 'branding')class="active"@endif><a href="{{ route('admin.settings.branding') }}">Branding</a></li>
                     <li @if($activeTab === 'embed')class="active"@endif><a href="{{ route('admin.settings.embed') }}">Embed</a></li>
                 </ul>
             </div>
