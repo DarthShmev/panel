@@ -1,3 +1,4 @@
 assets/*
 !assets/svgs
 !assets/svgs/*.svg
+uploaded_assets/*
