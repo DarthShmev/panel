@@ -78,4 +78,23 @@ class BrandingController extends Controller
 
         return redirect()->route('admin.settings.branding');
     }
+
+    /**
+     * Delete an uploaded branding asset and revert to default.
+     */
+    public function delete(): RedirectResponse
+    {
+        // Store the asset's path right away before it is lost in order to delete it.
+        $imagePath = $this->settings->get('settings::branding:auth_logo', null);
+
+        // Revert the branded asset back to default.
+        $this->settings->forget('settings::branding:auth_logo');
+
+        // TODO - Delete the uploaded asset.
+
+        $this->kernel->call('queue:restart');
+        $this->alert->success('Panel settings have been updated successfully and the queue worker was restarted to apply these changes.')->flash();
+
+        return redirect()->route('admin.settings.branding');
+    }
 }

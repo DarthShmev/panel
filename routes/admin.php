@@ -71,6 +71,8 @@ Route::group(['prefix' => 'settings'], function () {
     Route::patch('/', 'Settings\IndexController@update');
     Route::patch('/branding', 'Settings\BrandingController@store');
     Route::patch('/embed', 'Settings\EmbedController@update');
+
+    Route::delete('/branding', 'Settings\BrandingController@delete');
 });
 
 /*
