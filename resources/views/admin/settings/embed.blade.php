@@ -42,10 +42,11 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label class="control-label">Theme Colour</label>
-                                <div>
-                                    <input type="text" class="form-control" name="ogp:theme_colour" value="{{ old('ogp:theme_colour', config('ogp.theme_colour')) }}" />
-                                    <p class="text-muted"><small>A hex code for the embed colour.</small></p>
+                                <div id="cp2" class="input-group theme_colour_picker">
+                                    <input type="text" class="form-control" name="ogp:theme_colour" value="{{ old('ogp:theme_colour', config('ogp.theme_colour')) }}">
+                                    <span class="input-group-addon"><i></i></span>
                                 </div>
+                                <p class="text-muted"><small>A hex code for the embed colour.</small></p>
                             </div>
                             <div class="form-group col-md-8">
                                 <label class="control-label">Image</label>
@@ -64,4 +65,13 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer-scripts')
+    @parent
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.1/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.1/js/bootstrap-colorpicker.min.js"></script>
+    <script>
+        $('#cp2').colorpicker();
+    </script>
 @endsection
