@@ -62,6 +62,7 @@ class BrandingController extends Controller
             if ($image->isValid()) {
                 $imageName = time() . '.' . $image->extension();
 
+                // TODO - Figure out a better way to store the uploaded assets.
                 if (app()->environment('local')) {
                     $uploadedLogo = $image->move(public_path('uploaded_assets/logos'), $imageName);
                 } else {
