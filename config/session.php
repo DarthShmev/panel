@@ -69,7 +69,7 @@ return [
     |
     */
 
-    'connection' => env('SESSION_DRIVER') === 'redis' ? 'sessions' : null,
+    'connection' => null,
 
     /*
     |--------------------------------------------------------------------------
