@@ -37,6 +37,7 @@ class SettingsServiceProvider extends ServiceProvider
         'ogp:description',
         'ogp:image',
         'ogp:theme_colour',
+        'branding:auth_logo',
     ];
 
     /**
